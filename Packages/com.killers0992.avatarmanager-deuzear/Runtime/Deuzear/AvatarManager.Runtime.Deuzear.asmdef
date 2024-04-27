@@ -1,0 +1,16 @@
+{
+    "name": "AvatarManager.Runtime.Deuzear",
+    "rootNamespace": "",
+    "references": [
+        "GUID:157bc6a6fe4ac4845962329c533e5db8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

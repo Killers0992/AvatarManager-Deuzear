@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1; height: 64px; max-height: 64px; min-height: 64px; min-width: auto; max-width: none; margin-left: 42px; margin-top: 1px; margin-bottom: 1px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-self: center;">
+            <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Icon" tooltip="Preview of image" style="border-top-left-radius: 9px; border-bottom-left-radius: 9px; border-top-right-radius: 9px; border-bottom-right-radius: 9px; border-left-color: rgba(70, 70, 70, 0.8); border-right-color: rgba(70, 70, 70, 0.8); border-top-color: rgba(70, 70, 70, 0.8); border-bottom-color: rgba(70, 70, 70, 0.8); min-width: 64px; max-width: 64px; width: 64px; height: 64px; max-height: 64px; min-height: 64px; background-color: rgb(0, 0, 0); background-image: resource(&apos;warning&apos;);" />
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(63, 63, 63, 0.28);">
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Chest fluff" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Name" style="-unity-text-align: middle-left; align-self: stretch; justify-content: space-around; height: 100%; font-size: 16px; margin-left: 4px;" />
+                    <ui:Label tabindex="-1" text="made by" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: stretch; justify-content: space-around; -unity-text-align: middle-left; font-size: 15px; -unity-font-style: normal; color: rgb(135, 135, 135);" />
+                    <ui:Label tabindex="-1" text="Abiboi" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Author" style="-unity-text-align: middle-left; font-size: 16px;" />
+                </ui:VisualElement>
+                <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement style="flex-grow: 1;" />
+                    <ui:VisualElement style="flex-grow: 1; flex-direction: row-reverse;">
+                        <ui:Button text="Install" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Install" style="border-left-width: 1px; border-top-right-radius: 18px; border-bottom-right-radius: 18px; min-width: 95px; border-right-width: 7px; margin-left: 0;" />
+                        <ui:Button text="&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Gumroad" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 1px; margin-bottom: 1px; background-image: resource(&apos;gumroad&apos;); width: 32px; max-width: 32px; min-width: 32px; background-color: rgba(88, 88, 88, 0); border-right-width: 0; border-left-width: 0; border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0);" />
+                        <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Settings" style="border-left-width: 7px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; min-width: 95px; border-top-left-radius: 18px; border-bottom-left-radius: 18px; margin-right: 0;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,1187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a1823a2eb73e049aae986ce3ca5a93, type: 3}
+  m_Name: DeuzearMenu
+  m_EditorClassIdentifier: 
+  Title: Deuzear
+  MinSize: {x: 1400, y: 600}
+  MaxSize: {x: 1400, y: 600}
+  FilterScenePrefix: Deuzear
+  MenuAsset: {fileID: 9197481963319205126, guid: 9baadae23d1d456468f492249831e865,
+    type: 3}
+  ButtonAsset: {fileID: 9197481963319205126, guid: 5d4bfa73c86375641860fa2c9c924b31,
+    type: 3}
+  AvatarModelFbxs:
+  - {fileID: 2959467708922500008, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+  - {fileID: 2959467708922500008, guid: 0234c395d6a589c4782e3b6f3fd78df4, type: 3}
+  Pages:
+  - {fileID: 11400000, guid: 5d703ad17f0c9f744a3779372f5d78e5, type: 2}
+  - {fileID: 11400000, guid: 37c2c8d001e1aa24985eeca27ab86c9e, type: 2}
+  - {fileID: 11400000, guid: 4a1e9430cb324ef4e8e801c92ca866dd, type: 2}
+  - {fileID: 11400000, guid: c66e0433aed036145869b0699fb04b34, type: 2}
+  - {fileID: 11400000, guid: 2ec5cfe3c8926cb4c8778d2fa1ecb633, type: 2}
+  Accessories:
+  - Name: Warmers
+    Type: 1
+    Location: 132
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 67b138c57021ead4bb4d5b147675c062, type: 3}
+    Mesh: {fileID: 5391866136456060920, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: Arm_Warmers
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 2
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Leg_Warmers
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 128
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Arm_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 2
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip4_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 128
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip5_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 128
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerLeg_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 4
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 128
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Warmers_ON
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 2
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: Warmer_Legs_Off
+      TargetLocation: 256
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Pants
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 3
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 36
+      TargetBlendShapeValue: 0
+    Blendshapes:
+    - Name: Arm Warmers
+      Location: 4
+      BlendShapeName: Warmer_Arms_Off
+      DefaultValue: 100
+      IsToggle: 0
+      ZeroMeansActivation: 1
+    - Name: Leg Warmers
+      Location: 128
+      BlendShapeName: Warmer_Legs_Off
+      DefaultValue: 100
+      IsToggle: 0
+      ZeroMeansActivation: 1
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Crop Top
+    Type: 1
+    Location: 4
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 5758ed67c33fdae478edf17a8d263e52, type: 3}
+    Mesh: {fileID: -2177886209740431564, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Side_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Jeans
+    Type: 1
+    Location: 192
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: ae56f3852da86f24d90aa0bb94e29742, type: 3}
+    Mesh: {fileID: -8280762400720511223, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Butt_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_HIp1_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip2_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip3_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip4_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip5_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerLeg_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_TailSide_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Leggings
+    Type: 1
+    Location: 192
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: aff87a8394418a04a83807152af07a17, type: 3}
+    Mesh: {fileID: 3869512858568928446, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Butt_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_HIp1_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip2_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip3_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip4_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip5_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerBack_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_TailSide_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerLeg_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Shrink_Lowerleg
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Pants
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Leg_Warmers
+      BlendshapeValue: 0
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 2
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: Leg_Warmers
+      TargetLocation: 0
+      TargetBlendShapeValue: 100
+    - BlendshapeName: Warmers_ON
+      BlendshapeValue: 0
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Puffer Jacket
+    Type: 1
+    Location: 36
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 313251112b2126e4e91bbe13fa3cd2ab, type: 3}
+    Mesh: {fileID: 3686278761571917055, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Shoes
+    Type: 1
+    Location: 512
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: a1894358d5755974098534749e9f3545, type: 3}
+    Mesh: {fileID: 6591807014612439933, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Socks
+    Type: 1
+    Location: 256
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: d9376415d892d9b4babfc261de889369, type: 3}
+    Mesh: {fileID: -3269653878167379662, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: Warmers_ON
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 2
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: Warmer_Legs_Off
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: T-Shirt
+    Type: 1
+    Location: 36
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: f5ccb15010d7dcb49bb20e6a8a98a00b, type: 3}
+    Mesh: {fileID: -1944735278484464605, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerBack_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Arm_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Side_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Hoodie
+    Type: 1
+    Location: 44
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 14f05374a5ad4874fa634c5c2022421a, type: 3}
+    Mesh: {fileID: -6437923277489693469, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerBack_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Arm_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Oversized Hoodie
+    Type: 1
+    Location: 44
+    Category: Clothing
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: cf9646c6ffba9bd4f97ac419e6f9a5cd, type: 3}
+    Mesh: {fileID: 1132411524104341480, guid: 02a2d2a2b6a34b542bdda89f24998468, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Side_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_HIp1_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip2_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 100
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip3_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Pants
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 3
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 128
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Arm_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Front Low
+    Type: 1
+    Location: 32
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 95d61858a5a7b314e8dedd0b5af1bc72, type: 3}
+    Mesh: {fileID: 7059892007314774702, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Chest
+    Type: 1
+    Location: 32
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 4075909290cb8d046893cacb9a5ee048, type: 3}
+    Mesh: {fileID: 7197049726999223180, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Tail
+    Type: 1
+    Location: 1024
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 6d21ed38dca7b414e9dd3995335945de, type: 3}
+    Mesh: {fileID: -9052964302371576575, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Crotch
+    Type: 1
+    Location: 64
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 729ff3bae29c40c419d230c3c2456571, type: 3}
+    Mesh: {fileID: -4161523710038097773, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Back Low
+    Type: 1
+    Location: 16
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: d98d5875fa6db06469233b329d89e417, type: 3}
+    Mesh: {fileID: 1913568145018812361, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Back Tail
+    Type: 1
+    Location: 8
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: ad550650b634218449403f170422125e, type: 3}
+    Mesh: {fileID: -6794370595350680882, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Head
+    Type: 1
+    Location: 1
+    Category: Fluff
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 16292c3ebd8efd94ead8dbeb9a95cdf6, type: 3}
+    Mesh: {fileID: 3228140249335844971, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Spikey
+    Type: 1
+    Location: 1024
+    Category: Tails
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 53150a739dc9f364aac8da9d3f682e95, type: 3}
+    Mesh: {fileID: 4807766189299339081, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Fluffy
+    Type: 1
+    Location: 1024
+    Category: Tails
+    Author: Abiboi
+    WebsiteUrl: https://abiboi.gumroad.com/l/Deuzear
+    Icon: {fileID: 2800000, guid: 42e4f6ffc2b50c9418645327247f901d, type: 3}
+    Mesh: {fileID: -7418194231302140362, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
+    Materials: []
+    AttachToBone: 
+    BoneTranslations: []
+    DefaultBlendshapes:
+    - BlendshapeName: Shrink_Tail
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Casual Femboy | Crop Top
+    Type: 2
+    Location: 36
+    Category: Clothing
+    Author: Waranto
+    WebsiteUrl: https://waranto.gumroad.com/l/CasualFemboyDeuzear
+    Icon: {fileID: 2800000, guid: 5c1f04c5cc3d29f48b3a45d563f18861, type: 3}
+    Mesh: {fileID: -986309624305122424, guid: a192db0c8d3f4824b8f283318c50e0c4, type: 3}
+    Materials:
+    - {fileID: 2100000, guid: 208431d4148f98042bdeaa4d0263c721, type: 2}
+    AttachToBone: 
+    BoneTranslations:
+    - OrginalName: Shoulder_L
+      NewName: Shoulder.L
+    - OrginalName: Upper_arm_L
+      NewName: Upper_arm.L
+    - OrginalName: Forearm_L
+      NewName: Forearm.L
+    - OrginalName: Hand_L
+      NewName: Hand.L
+    - OrginalName: thumb_01_L
+      NewName: thumb.01.L
+    - OrginalName: Shoulder_R
+      NewName: Shoulder.R
+    - OrginalName: Upper_arm_R
+      NewName: Upper_arm.R
+    - OrginalName: Forearm_R
+      NewName: Forearm.R
+    - OrginalName: Hand_R
+      NewName: Hand.R
+    - OrginalName: thumb_01_R
+      NewName: thumb.01.R
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_Arm_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Back_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Side_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: Arm_Warmers
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Casual Femboy | Shorts
+    Type: 2
+    Location: 64
+    Category: Clothing
+    Author: Waranto
+    WebsiteUrl: https://waranto.gumroad.com/l/CasualFemboyDeuzear
+    Icon: {fileID: 2800000, guid: de844ae83a155b34887a915106afdf56, type: 3}
+    Mesh: {fileID: -1807140829557154294, guid: a192db0c8d3f4824b8f283318c50e0c4, type: 3}
+    Materials:
+    - {fileID: 2100000, guid: f775285aa3c6df54c9e4036457cb5cdd, type: 2}
+    AttachToBone: 
+    BoneTranslations:
+    - OrginalName: Left_leg
+      NewName: Left leg
+    - OrginalName: Shin_L
+      NewName: Shin.L
+    - OrginalName: Right_leg
+      NewName: Right leg
+    - OrginalName: Shin_R
+      NewName: Shin.R
+    DefaultBlendshapes:
+    - BlendshapeName: BodyFluff_TailSide_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_LowerBack_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_HIp1_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Hip2_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    - BlendshapeName: BodyFluff_Butt_Hide
+      BlendshapeValue: 100
+      UsePrevValueThanDefault: 0
+      DefaultValue: 0
+      PrevBlendshapeValue: 0
+      Condition: 0
+      InvertValueIfConditionNotPassed: 0
+      TargetAccessory: 0
+      TargetBlendShape: 
+      TargetLocation: 0
+      TargetBlendShapeValue: 0
+    Blendshapes: []
+    IntialPosition: {x: 0, y: 0, z: 0}
+    IntialRotation: {x: 0, y: 0, z: 0}
+    Object: {fileID: 0}
+  - Name: Muzzle
+    Type: 2
+    Location: 2
+    Category: Clothing
+    Author: Waranto
+    WebsiteUrl: https://waranto.gumroad.com/l/DeuzearMuzzle
+    Icon: {fileID: 2800000, guid: 27cf839c7e8bbcc4ab3ae2da9bac9a97, type: 3}
+    Mesh: {fileID: -4276338287470950492, guid: 5486163b630c75343a35a54db23ba9a0, type: 3}
+    Materials:
+    - {fileID: 2100000, guid: 8cb21f6c733425245904c2134551dda3, type: 2}
+    AttachToBone: Head
+    BoneTranslations: []
+    DefaultBlendshapes: []
+    Blendshapes: []
+    IntialPosition: {x: -0.05168993, y: -0.7949657, z: 0.01504693}
+    IntialRotation: {x: 4.747, y: 0, z: 0}
+    Object: {fileID: 0}
+  Customizations:
+  - Name: Top fluff
+    Category: Ears
+    BlendshapeName: EarFluff_Top_Hide
+  - Name: Bottom fluff
+    Category: Ears
+    BlendshapeName: EarFluff_Bottom_Hide
+  - Name: Spike top
+    Category: Ears
+    BlendshapeName: Ears_Spike_Top
+  - Name: Spike bottom
+    Category: Ears
+    BlendshapeName: Ears_Spike_Bottom
+  - Name: Swirl in
+    Category: Ears
+    BlendshapeName: Ears_Swirl_In
+  - Name: Pointier
+    Category: Ears
+    BlendshapeName: Ears_Pointier
+  - Name: Eye lash 1
+    Category: Eyes
+    BlendshapeName: Lash_1
+  - Name: Eye lash 2
+    Category: Eyes
+    BlendshapeName: Lash_2
+  - Name: Ultra fluff
+    Category: Face
+    BlendshapeName: F_Ultrafluff
+  - Name: Headset
+    Category: Face
+    BlendshapeName: F_Headset
+  - Name: Mouth spike
+    Category: Face
+    BlendshapeName: F_Mouth_Spike_Off
+  - Name: Muzzle length
+    Category: Face
+    BlendshapeName: F_Muzzle_Longer
+  - Name: Size
+    Category: Arms
+    BlendshapeName: B_Bigger_arms
+  - Name: Forearms size
+    Category: Arms
+    BlendshapeName: B_Bigger_Forearms
+  - Name: Shoulders size
+    Category: Arms
+    BlendshapeName: B_Bigger_Shoulders
+  - Name: Fluff
+    Category: Arms
+    BlendshapeName: BodyFluff_Arm_Hide
+  - Name: Ribcage size
+    Category: Chest
+    BlendshapeName: B_Bigger_Ribcage
+  - Name: Chest width
+    Category: Chest
+    BlendshapeName: B_Wider_Chest
+  - Name: Muscular chest
+    Category: Chest
+    BlendshapeName: B_Muscular_Chest
+  - Name: Low fluff
+    Category: Chest
+    BlendshapeName: Fluff_Front_Low
+  - Name: Low fluff ultra
+    Category: Chest
+    BlendshapeName: Ultrafluff
+  - Name: Fluff
+    Category: Chest
+    BlendshapeName: Fluff_Chest
+  - Name: Belly size
+    Category: Belly
+    BlendshapeName: B_Big_Belly
+  - Name: Belly width
+    Category: Belly
+    BlendshapeName: B_Wider_Belly
+  - Name: Muscular abdomen
+    Category: Belly
+    BlendshapeName: B_Muscular_Abdomen
+  - Name: Crotch fluff
+    Category: Front
+    BlendshapeName: Fluff_Crotch
+  - Name: Thights size
+    Category: Front
+    BlendshapeName: B_Bigger thights
+  - Name: Hips size
+    Category: Front
+    BlendshapeName: B_Big_Hips
+  - Name: Fluff side
+    Category: Front
+    BlendshapeName: BodyFluff_Side_Hide
+  - Name: Hip fluff
+    Category: Front
+    BlendshapeName: BodyFluff_HIp1_Hide
+  - Name: Hip2 fluff
+    Category: Front
+    BlendshapeName: BodyFluff_Hip2_Hide
+  - Name: Hip3 fluff
+    Category: Front
+    BlendshapeName: BodyFluff_Hip3_Hide
+  - Name: Hip4 fluff
+    Category: Front
+    BlendshapeName: BodyFluff_Hip4_Hide
+  - Name: Hip5 fluff
+    Category: Front
+    BlendshapeName: BodyFluff_Hip5_Hide
+  - Name: Booty size
+    Category: Back
+    BlendshapeName: B_Big_Booty
+  - Name: Booty fluff
+    Category: Back
+    BlendshapeName: BodyFluff_Butt_Hide
+  - Name: Fluff
+    Category: Back
+    BlendshapeName: BodyFluff_Back_Hide
+  - Name: Lowerback fluff
+    Category: Back
+    BlendshapeName: BodyFluff_LowerBack_Hide
+  - Name: Lower legs size
+    Category: Legs
+    BlendshapeName: B_Bigger_LowerLegs
+  - Name: Fluff lower legs
+    Category: Legs
+    BlendshapeName: BodyFluff_LowerLeg_Hide
+  AvatarComponent: {fileID: 11500000, guid: fea103d634bb4f343b8395dd08df4622, type: 3}
