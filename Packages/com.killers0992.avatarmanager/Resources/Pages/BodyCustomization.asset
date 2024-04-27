@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a5778a5193df34a9d7d4e56a78c3d6, type: 3}
+  m_Name: BodyCustomization
+  m_EditorClassIdentifier: 
+  Name: BodyCustomization
+  DisplayName: Body Customization
+  CategoryItem: {fileID: 9197481963319205126, guid: 0154f314d7c2f384895f41a4218c86ff,
+    type: 3}
+  Item: {fileID: 9197481963319205126, guid: c16867b9f18b5b142bc1cdf1be4406ae, type: 3}
+  ViewingCustoms:
+  - Name: Top fluff
+    Category: Ears
+    BlendshapeName: EarFluff_Top_Hide
+  - Name: Bottom fluff
+    Category: Ears
+    BlendshapeName: EarFluff_Bottom_Hide
+  - Name: Spike top
+    Category: Ears
+    BlendshapeName: Ears_Spike_Top
+  - Name: Spike bottom
+    Category: Ears
+    BlendshapeName: Ears_Spike_Bottom
+  - Name: Swirl in
+    Category: Ears
+    BlendshapeName: Ears_Swirl_In
+  - Name: Pointier
+    Category: Ears
+    BlendshapeName: Ears_Pointier

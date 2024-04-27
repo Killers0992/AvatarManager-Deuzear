@@ -1,0 +1,14 @@
+{
+  "name": "com.killers0992.avatarmanager",
+  "displayName": "Avatar Manager",
+  "version": "1.0.0",
+  "description": "Tool made for managing avatars.",
+  "author": {
+    "name": "Killers0992",
+    "email": "killers0992@gmail.com",
+    "url": "https://killers.dev"
+  },
+  "dependencies": {
+    "com.unity.editorcoroutines": "1.0.0"
+  }
+}
