@@ -19,7 +19,7 @@ namespace AvatarManager.Deuzear
                 {
                     rootVisualElement.Clear();
 
-                    _menuInstance = AssetDatabase.LoadAssetAtPath<BaseMenu>("Packages/com.killers0992.avatarmanager/DeuzearMenu.asset");
+                    _menuInstance = AssetDatabase.LoadAssetAtPath<BaseMenu>("Packages/com.killers0992.avatarmanager-deuzear/DeuzearMenu.asset");
 
                     _menuInstance.OnInitialize(this);
                 }

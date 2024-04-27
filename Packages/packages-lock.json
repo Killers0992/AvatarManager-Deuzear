@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.killers0992.avatarmanager": {
-      "version": "file:com.killers0992.avatarmanager",
+    "com.killers0992.avatarmanager-deuzear": {
+      "version": "file:com.killers0992.avatarmanager-deuzear",
       "depth": 0,
       "source": "embedded",
       "dependencies": {
