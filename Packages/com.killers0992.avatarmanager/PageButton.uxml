@@ -1,3 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:Button text="Main settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PageButton" style="border-left-width: 4px; border-right-width: 4px; border-top-left-radius: 13px; border-bottom-right-radius: 13px; background-color: rgb(84, 84, 84); border-left-color: rgb(34, 34, 34); border-right-color: rgb(34, 34, 34); border-top-color: rgb(34, 34, 34); border-bottom-color: rgb(34, 34, 34); font-size: 24px; text-shadow: 2.2px 2.1px 0 rgb(108, 108, 108); -unity-font-style: bold; letter-spacing: 2px;" />
-</ui:UXML>
