@@ -156,11 +156,15 @@ namespace AvatarManager.Deuzear
 
             public void UpdateValues(SkinnedMeshRenderer renderer)
             {
-                Renderer = renderer;
-                float blendValue = renderer.GetBlendshapeValue(BlendShapeName);
+                float value = 0f;
+                if (renderer != null)
+                {
+                    Renderer = renderer;
+                    value = renderer.GetBlendshapeValue(BlendShapeName);
+                }
 
-                FloatField.value = blendValue;
-                Slider.value = blendValue;
+                FloatField.value = value;
+                Slider.value = value;
             }
 
             public void Bind(string name, string blendShapeName, SkinnedMeshRenderer renderer)
@@ -200,17 +204,24 @@ namespace AvatarManager.Deuzear
             void OnFloatChanged(ChangeEvent<float> evt)
             {
                 float value = Math.Min(100f, evt.newValue);
-
-                Renderer.SetBlendshapeValue(BlendShapeName, value);
-                BaseAvatar.Current?.UpdateAllBlendshapes(Renderer);
                 Slider.value = value;
+
+                if (Renderer != null)
+                {
+                    Renderer.SetBlendshapeValue(BlendShapeName, value);
+                    BaseAvatar.Current?.UpdateAllBlendshapes(Renderer);
+                }
             }
 
             void OnSliderChanged(ChangeEvent<float> evt)
             {
-                Renderer.SetBlendshapeValue(BlendShapeName, evt.newValue);
-                BaseAvatar.Current?.UpdateAllBlendshapes(Renderer);
                 FloatField.value = evt.newValue;
+
+                if (Renderer != null)
+                {
+                    Renderer.SetBlendshapeValue(BlendShapeName, evt.newValue);
+                    BaseAvatar.Current?.UpdateAllBlendshapes(Renderer);
+                }
             }
         }
 

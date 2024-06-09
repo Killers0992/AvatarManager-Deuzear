@@ -49,6 +49,9 @@ where TEnum : Enum, IConvertible
             {
                 string blendName = renderer.sharedMesh.GetBlendShapeName(x);
 
+                if (string.IsNullOrWhiteSpace(blendName))
+                    continue;
+
                 if (blendName != name) continue;
 
                 return new BlendshapeInfo(x, blendName, renderer.GetBlendShapeWeight(x), renderer);

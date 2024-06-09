@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -165,6 +164,9 @@ namespace AvatarManager.Core
 
             SceneDropdownField.choices = choices;
             scenesPaths = paths.ToArray();
+
+            if (choices.Count == 0)
+                return;
 
             SceneDropdownField.value = value ?? choices[0];
         }
