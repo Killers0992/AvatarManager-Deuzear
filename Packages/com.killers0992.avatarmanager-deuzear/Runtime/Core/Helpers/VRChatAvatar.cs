@@ -1,4 +1,4 @@
-﻿#if VRC_SDK_VRCSDK3
+﻿#if VRC_SDK_VRCSDK3 && UNITY_EDITOR
 using System.Linq;
 using UnityEditor.Animations;
 using VRC;
