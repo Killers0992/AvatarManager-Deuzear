@@ -80,7 +80,9 @@ namespace AvatarManager.Core
         public Vector3 IntialPosition;
         public Vector3 IntialRotation;
 
+#if UNITY_EDITOR
         public string MeshPath => AssetDatabase.GetAssetPath(Mesh);
+#endif
 
         public GameObject Object;
 
