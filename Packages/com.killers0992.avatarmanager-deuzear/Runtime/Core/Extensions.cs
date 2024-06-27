@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using VRC.Utility;
 
 namespace AvatarManager.Core
 {
@@ -11,6 +12,84 @@ namespace AvatarManager.Core
 where TEnum : Enum, IConvertible
         {
             return (me.ToInt32(null) & other.ToInt32(null)) != 0;
+        }
+
+        public static Dictionary<string, GameObject> GetChildren(this Transform transform, GameObject relativePath, Dictionary<string, GameObject> dict, bool simple = false)
+        {
+            if (simple && !dict.ContainsKey(transform.name))
+            {
+                dict.Add(transform.name, transform.gameObject);
+            }
+            else if (!simple)
+                dict.Add(transform.GetGameObjectPath(), transform.gameObject);
+
+            for (int x = 0; x < transform.childCount; x++)
+                GetChildren(transform.GetChild(x), relativePath, dict, simple);
+
+            return dict;
+        }
+
+        public static GameObject GetGameObjectFromPath(this string path, GameObject target, bool create = true)
+        {
+            var sp = path.Split('/').ToList();
+
+            sp.RemoveAt(0);
+
+            foreach (var s in sp)
+            {
+                var findGo = GetGameObjectByName(s, target.transform);
+
+                if (findGo == null)
+                {
+                    if (!create)
+                        return null;
+
+                    var go = new GameObject(s);
+                    go.transform.parent = target.transform;
+                    target = go;
+                }
+                else
+                    target = findGo;
+            }
+            return target;
+        }
+
+        public static GameObject GetGameObjectByName(this string name, Transform t)
+        {
+            for (int x = 0; x < t.childCount; x++)
+            {
+                var child = t.GetChild(x);
+
+                if (child.name == name)
+                    return child.gameObject;
+            }
+            return null;
+        }
+
+        public static string GetPath(this Transform t, string str = "")
+        {
+            if (t == null || t.IsRoot())
+                return str;
+
+            str = $"/{t.name}" + str;
+
+            if (t.parent != null)
+                str = GetPath(t.parent, str);
+
+            return str;
+        }
+
+        public static string GetGameObjectPath(this Transform transform)
+        {
+            string path = transform.name;
+            while (transform.parent != null)
+            {
+                transform = transform.parent;
+
+                if (transform.parent != null)
+                    path = transform.name + "/" + path;
+            }
+            return path;
         }
 
         public static float GetBlendshapeValue(this SkinnedMeshRenderer renderer, string name)

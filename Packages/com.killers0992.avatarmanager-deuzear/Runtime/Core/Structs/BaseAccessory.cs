@@ -1,14 +1,20 @@
+using AvatarManager.Core.Data;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
-using System.Threading;
+
 using UnityEditor;
+using UnityEditor.Animations;
+
 using UnityEngine;
-using UnityEngine.Experimental.AI;
-using UnityEngine.Rendering;
+using UnityEngine.Animations;
+
+#if VRC_SDK_VRCSDK3
+using VRC.SDK3.Avatars.ScriptableObjects;
+using VRC.SDK3.Dynamics.Contact.Components;
+using VRC.SDK3.Dynamics.PhysBone.Components;
+#endif
 
 namespace AvatarManager.Core
 {
@@ -26,7 +32,7 @@ namespace AvatarManager.Core
             }
         }
 
-
+        [Header("Base")]
         public string Name;
 
         public AccessoryCategory Type;
@@ -40,7 +46,23 @@ namespace AvatarManager.Core
 
         public Texture2D Icon;
 
+        public bool RequiresVrcSdk;
+
+        [Header("Kit")]
+        public bool IsKit;
+
+        public GameObject KitPrefab;
+        public string[] WhitelistedObjects;
+
+        public AnimatorController Animator;
+
+        public string MenuPath;
+        public VRCExpressionsMenu Menu;
+
+        [Header("Other")]
+
         public Mesh Mesh;
+
         public Material[] Materials;
 
         public string AttachToBone;
@@ -125,6 +147,125 @@ namespace AvatarManager.Core
 
         public GameObject Instantiate(BaseAvatar avatar, bool focus = false)
         {
+#if !UNITY_EDITOR
+            return null;
+#else
+            if (RequiresVrcSdk)
+            {
+#if !VRC_SDK_VRCSDK3
+                return null;
+#endif
+            }
+
+            if (IsKit)
+            {
+                Vector3 avatarPos = avatar.transform.position;
+
+                avatar.transform.position = Vector3.zero;
+
+                if (KitPrefab != null)
+                {
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GetAssetPath(KitPrefab));
+
+                    Dictionary<string, GameObject> map = new Dictionary<string, GameObject>();
+
+                    map = prefab.transform.GetChildren(prefab, map);
+
+                    Dictionary<string, GameObject> currentDeuzearNewMap = new Dictionary<string, GameObject>();
+                    Dictionary<string, GameObject> targetDeuzearNewMap = new Dictionary<string, GameObject>();
+
+                    foreach (var go2 in map.Values)
+                    {
+                        string str = go2.transform.GetPath();
+
+                        Debug.Log(str);
+
+                        if (!WhitelistedObjects.Any(x => x.StartsWith(str)))
+                            continue;
+
+                        if (!currentDeuzearNewMap.ContainsKey(str))
+                            currentDeuzearNewMap.Add(str, go2);
+                    }
+
+                    map = avatar.transform.GetChildren(avatar.transform.gameObject, new Dictionary<string, GameObject>());
+
+                    foreach (var go2 in map.Values)
+                    {
+                        string str = go2.transform.GetPath();
+
+                        if (!targetDeuzearNewMap.ContainsKey(str))
+                            targetDeuzearNewMap.Add(str, go2);
+                    }
+
+                    foreach (var currentDeuzear in currentDeuzearNewMap)
+                    {
+                        if (targetDeuzearNewMap.ContainsKey(currentDeuzear.Key)) continue;
+
+                        var components = currentDeuzear.Value.GetComponents<Component>().Where(x => x.GetType() != typeof(Transform)).ToArray();
+
+                        CreateGameobjectsFromPath(avatar.gameObject, currentDeuzear.Value.activeSelf, currentDeuzear.Value.transform, currentDeuzear.Key, components);
+                    }
+
+                    foreach (var link in avatar.gameObject.GetComponentsInChildren<LinkToGameobject>(true))
+                    {
+                        link.OnLink();
+                        UnityEngine.Object.DestroyImmediate(link);
+                    }
+                }
+
+                if (Animator?.layers != null)
+                {
+                    // Clone layers
+                    foreach (var layer in Animator.layers)
+                    {
+                        avatar.Avatar.FxLayer.CreateLayer(layer.name, true, layer.stateMachine, layer.avatarMask, layer.blendingMode, layer.syncedLayerIndex, layer.iKPass, layer.defaultWeight, layer.syncedLayerAffectsTiming);
+                    }
+
+                    // Clone parameters
+                    foreach (var parameter in Animator.parameters)
+                    {
+                        var param = avatar.Avatar.FxLayer.GetParameter(parameter.name);
+                        if (param == null)
+                            avatar.Avatar.FxLayer.CreateParameter(parameter, true, true);
+                        else
+                        {
+                            object val = null;
+                            switch (parameter.type)
+                            {
+                                case AnimatorControllerParameterType.Float:
+                                    val =  parameter.defaultFloat;
+                                    break;
+                                case AnimatorControllerParameterType.Bool:
+                                    val =  parameter.defaultBool;
+                                    break;
+                                case AnimatorControllerParameterType.Int:
+                                    val =  parameter.defaultInt;
+                                    break;
+                            }
+                            avatar.Avatar.AddParameter(param.name, val);
+                        }
+                    }
+
+                    EditorUtility.SetDirty(avatar.Avatar.FxLayer.BaseAnimator);
+                }
+
+                if (Menu != null)
+                {
+                    avatar.Avatar.Menu.controls.Add(new VRCExpressionsMenu.Control()
+                    {
+                        name = MenuPath,
+                        type = VRCExpressionsMenu.Control.ControlType.SubMenu,
+                        subMenu = Menu,
+                    });
+
+                    EditorUtility.SetDirty(avatar.Avatar.Menu);
+                }
+
+                AssetDatabase.SaveAssets();
+                avatar.transform.position = avatarPos;
+                return null;
+            }
+
             GameObject targetAsset = AssetDatabase.LoadAssetAtPath<GameObject>(MeshPath);
 
             if (targetAsset == null)
@@ -257,7 +398,156 @@ namespace AvatarManager.Core
             }
 
             return go;
+#endif
         }
+
+#if UNITY_EDITOR
+        public void CreateGameobjectsFromPath(GameObject target, bool isActive, Transform transform, string path, Component[] components)
+        {
+            var sp = path.Split('/').ToList();
+
+            sp.RemoveAt(0);
+
+            GameObject root = target;
+
+            GameObject current = target;
+
+            int index = 0;
+
+            foreach (var s in sp)
+            {
+                var findGo = s.GetGameObjectByName(current.transform);
+
+                if (findGo == null)
+                {
+                    GameObject go = null;
+                    if (index == sp.Count -1)
+                    {
+                        go = new GameObject(s, components.Select(x => x.GetType()).Where(x => x != typeof(Transform)).ToArray());
+                        EditorUtility.SetDirty(go);
+                        go.SetActive(isActive);
+                        go.transform.parent = current.transform;
+                        go.transform.position = transform.position;
+                        go.transform.rotation = transform.rotation;
+                        go.transform.localScale = transform.localScale;
+
+                        var comps = go.GetComponents<Component>().Where(x => x.GetType() != typeof(Transform)).ToArray();
+
+                        for (int x = 0; x < components.Length; x++)
+                        {
+                            var comp = components[x];
+
+                            string componentPath = comp.transform.GetPath();
+
+                            EditorUtility.CopySerialized(components[x], comps[x]);
+
+                            switch (comp)
+                            {
+                                case SkinnedMeshRenderer renderer:
+                                    {
+                                        string rootBonePath = renderer.rootBone.GetPath();
+                                        GameObject targetGo = rootBonePath.GetGameObjectFromPath(root, false);
+
+                                        var link = go.AddComponent<LinkToGameobject>();
+                                        link.Component = comps[x];
+
+                                        RendererData data = new RendererData();
+
+                                        data.RootBone = renderer.rootBone == null ? null : renderer.rootBone.GetPath();
+                                        data.ProbeAnchor = renderer.probeAnchor == null ? null : renderer.probeAnchor.GetPath();
+
+                                        data.Bones = renderer.bones.Select(y => y.GetPath()).ToList();
+
+                                        link.Data = data;
+                                    }
+                                    break;
+                                case VRCContactReceiver receiver:
+                                    {
+                                        var link = go.AddComponent<LinkToGameobject>();
+                                        link.Component = comps[x];
+
+                                        VRCData data = new VRCData();
+
+                                        data.RootBone = receiver.rootTransform == null ? null : receiver.rootTransform.GetPath();
+
+                                        link.Data = data;
+                                    }
+                                    break;
+                                case VRCContactSender sender:
+                                    {
+                                        var link = go.AddComponent<LinkToGameobject>();
+                                        link.Component = comps[x];
+                                        VRCData data = new VRCData();
+
+                                        data.RootBone = sender.rootTransform == null ? null : sender.rootTransform.GetPath();
+
+                                        link.Data = data;
+                                    }
+                                    break;
+                                case VRCPhysBone phys:
+                                    {
+                                        EditorUtility.CopySerialized(components[x], comps[x]);
+                                        var link = go.AddComponent<LinkToGameobject>();
+                                        link.Component = comps[x];
+                                        VRCData data = new VRCData();
+
+                                        data.RootBone = phys.rootTransform == null ? null : phys.rootTransform.GetPath();
+
+                                        link.Data = data;
+                                    }
+                                    break;
+                                case IConstraint parent:
+                                    {
+                                        if (parent.GetSource(0).sourceTransform.name == "WorldRoot")
+                                            continue;
+
+                                        var link = go.AddComponent<LinkToGameobject>();
+                                        link.Component = comps[x];
+
+                                        List<ConstraintSource> sources = new List<ConstraintSource>();
+
+                                        parent.GetSources(sources);
+
+                                        ConstraintData data = new ConstraintData();
+
+                                        switch (parent)
+                                        {
+                                            case ParentConstraint pc:
+                                                data.PositionAtRest = pc.translationAtRest;
+                                                data.RotationAtRest = pc.rotationAtRest;
+                                                data.PositionOffsets = pc.translationOffsets;
+                                                data.RotationOffsets = pc.rotationOffsets;
+                                                break;
+                                        }
+
+                                        sources.ForEach(y =>
+                                        {
+                                            data.Sources.Add(y.sourceTransform.GetPath(), y.weight);
+                                        });
+                                        link.Data = data;
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        go = new GameObject(s);
+                        EditorUtility.SetDirty(go);
+                        go.transform.parent = current.transform;
+                    }
+
+                    current = go;
+                }
+                else
+                {
+                    current = findGo;
+                }
+                index++;
+            }
+
+        }
+#endif
 
         public void SetDefaultIfPossible(BaseAvatar avatar, int index, string blendshapeName)
         {
@@ -321,5 +611,5 @@ namespace AvatarManager.Core
                     break;
             }
         }
-    }
+        }
 }

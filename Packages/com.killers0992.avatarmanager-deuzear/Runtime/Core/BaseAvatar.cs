@@ -1,10 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using AvatarManager.Core.Helpers;
+using VRC.SDK3.Avatars.Components;
+
+
+#if VRC_SDK_VRCSDK3
+using VRC.SDKBase;
+#endif
 
 namespace AvatarManager.Core
 {
     public class BaseAvatar : MonoBehaviour
+#if VRC_SDK_VRCSDK3
+        , IEditorOnly
+#endif
     {
         static BaseAvatar _currentAvatar;
         public static BaseAvatar Current
@@ -25,7 +35,35 @@ namespace AvatarManager.Core
 
         private SkinnedMeshRenderer _bodyRenderer;
 
+        private VRCAvatarDescriptor _descriptor;
+
+        private VRChatAvatar _avatar;
+
         public List<BaseAccessory> Accesories = new List<BaseAccessory>();
+
+        public VRCAvatarDescriptor Descriptor
+        {
+            get
+            {
+                if (_descriptor != null)
+                    return _descriptor;
+
+                _descriptor = this.GetComponentInChildren<VRCAvatarDescriptor>();
+                return _descriptor;
+            }
+        }
+
+        public VRChatAvatar Avatar
+        {
+            get
+            {
+                if (_avatar != null && _avatar.BaseDescriptor != null)
+                    return _avatar;
+
+                _avatar = VRChatAvatar.Init(Descriptor);
+                return _avatar;
+            }
+        }
 
         public SkinnedMeshRenderer BodyRenderer
         {

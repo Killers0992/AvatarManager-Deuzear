@@ -30,8 +30,6 @@ namespace AvatarManager.Core
 
         public BaseCustomization[] Customizations;
 
-        public BaseAvatar AvatarComponent;
-
         public virtual void OnInitialize(EditorWindow window)
         {
             InitializePages();
@@ -186,7 +184,7 @@ namespace AvatarManager.Core
 
                 if (avatar == null)
                 {
-                    avatar = (BaseAvatar)root.gameObject.AddComponent(AvatarComponent.GetType());
+                    avatar = root.gameObject.AddComponent<BaseAvatar>();
 
                     foreach(var accessory in Accessories)
                     {
