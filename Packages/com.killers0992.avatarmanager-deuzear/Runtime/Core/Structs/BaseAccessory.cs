@@ -56,7 +56,9 @@ namespace AvatarManager.Core
         public GameObject KitPrefab;
         public string[] WhitelistedObjects;
 
+#if UNITY_EDITOR
         public AnimatorController Animator;
+#endif
 
         public string MenuPath;
         public VRCExpressionsMenu Menu;

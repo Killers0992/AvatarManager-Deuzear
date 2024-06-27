@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using AvatarManager.Core.Helpers;
-using VRC.SDK3.Avatars.Components;
 
+#if UNITY_EDITOR
+using AvatarManager.Core.Helpers;
+#endif
 
 #if VRC_SDK_VRCSDK3
 using VRC.SDKBase;
+using VRC.SDK3.Avatars.Components;
 #endif
 
 namespace AvatarManager.Core
@@ -37,7 +39,9 @@ namespace AvatarManager.Core
 
         private VRCAvatarDescriptor _descriptor;
 
+#if UNITY_EDITOR
         private VRChatAvatar _avatar;
+#endif
 
         public List<BaseAccessory> Accesories = new List<BaseAccessory>();
 
@@ -53,6 +57,7 @@ namespace AvatarManager.Core
             }
         }
 
+#if UNITY_EDITOR
         public VRChatAvatar Avatar
         {
             get
@@ -64,6 +69,7 @@ namespace AvatarManager.Core
                 return _avatar;
             }
         }
+#endif
 
         public SkinnedMeshRenderer BodyRenderer
         {
