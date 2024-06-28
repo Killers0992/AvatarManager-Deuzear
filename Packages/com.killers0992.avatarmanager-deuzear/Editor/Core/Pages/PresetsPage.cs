@@ -1,7 +1,6 @@
-using AvatarManager.Core;
 using UnityEngine;
 
-namespace AvatarManager.Deuzear
+namespace AvatarManager.Core
 {
     [CreateAssetMenu(fileName = "Page", menuName = "ScriptableObjects/Presets", order = 1)]
     public class PresetsPage : BasePage

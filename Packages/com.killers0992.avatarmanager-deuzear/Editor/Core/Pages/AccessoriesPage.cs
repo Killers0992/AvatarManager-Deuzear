@@ -1,10 +1,9 @@
-using AvatarManager.Core;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AvatarManager.Deuzear
+namespace AvatarManager.Core
 {
     [CreateAssetMenu(fileName = "Page", menuName = "ScriptableObjects/Accessories", order = 1)]
     public class AccessoriesPage : BasePage

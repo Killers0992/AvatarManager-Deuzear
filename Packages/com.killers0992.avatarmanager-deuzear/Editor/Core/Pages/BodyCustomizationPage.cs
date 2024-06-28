@@ -1,5 +1,3 @@
-using AvatarManager.Core;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace AvatarManager.Deuzear
+namespace AvatarManager.Core
 {
     [CreateAssetMenu(fileName = "Page", menuName = "ScriptableObjects/BodyCustomization", order = 1)]
     public class BodyCustomizationPage : BasePage

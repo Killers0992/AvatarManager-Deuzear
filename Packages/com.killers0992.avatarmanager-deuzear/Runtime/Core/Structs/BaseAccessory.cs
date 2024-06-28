@@ -61,7 +61,9 @@ namespace AvatarManager.Core
 #endif
 
         public string MenuPath;
+#if UNITY_EDITOR && VRC_SDK_VRCSDK3
         public VRCExpressionsMenu Menu;
+#endif
 
         [Header("Other")]
 
@@ -219,6 +221,7 @@ namespace AvatarManager.Core
                     }
                 }
 
+#if VRC_SDK_VRCSDK3
                 if (Animator?.layers != null)
                 {
                     // Clone layers
@@ -266,6 +269,7 @@ namespace AvatarManager.Core
 
                     EditorUtility.SetDirty(avatar.Avatar.Menu);
                 }
+#endif
 
                 AssetDatabase.SaveAssets();
                 avatar.transform.position = avatarPos;
@@ -405,10 +409,10 @@ namespace AvatarManager.Core
 
             return go;
 #endif
-        }
+            }
 
 #if UNITY_EDITOR
-        public void CreateGameobjectsFromPath(GameObject target, bool isActive, Transform transform, string path, Component[] components)
+            public void CreateGameobjectsFromPath(GameObject target, bool isActive, Transform transform, string path, Component[] components)
         {
             var sp = path.Split('/').ToList();
 
@@ -467,6 +471,7 @@ namespace AvatarManager.Core
                                         link.Data = data;
                                     }
                                     break;
+#if VRC_SDK_VRCSDK3
                                 case VRCContactReceiver receiver:
                                     {
                                         var link = go.AddComponent<LinkToGameobject>();
@@ -502,6 +507,7 @@ namespace AvatarManager.Core
                                         link.Data = data;
                                     }
                                     break;
+#endif
                                 case IConstraint parent:
                                     {
                                         if (parent.GetSource(0).sourceTransform.name == "WorldRoot")

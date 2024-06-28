@@ -1,11 +1,6 @@
-using AvatarManager.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
-using UnityEngine;
 
-namespace AvatarManager.Deuzear
+namespace AvatarManager.Core
 {
     public class DeuzearMenu : EditorWindow
     {

@@ -27,8 +27,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5d703ad17f0c9f744a3779372f5d78e5, type: 2}
   - {fileID: 11400000, guid: 37c2c8d001e1aa24985eeca27ab86c9e, type: 2}
   - {fileID: 11400000, guid: 4a1e9430cb324ef4e8e801c92ca866dd, type: 2}
-  - {fileID: 11400000, guid: c66e0433aed036145869b0699fb04b34, type: 2}
-  - {fileID: 11400000, guid: 2ec5cfe3c8926cb4c8778d2fa1ecb633, type: 2}
   Accessories:
   - Name: Warmers
     Type: 1
@@ -39,10 +37,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 67b138c57021ead4bb4d5b147675c062, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 5391866136456060920, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -161,10 +159,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 5758ed67c33fdae478edf17a8d263e52, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -2177886209740431564, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -216,10 +214,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: ae56f3852da86f24d90aa0bb94e29742, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -8280762400720511223, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -326,10 +324,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: aff87a8394418a04a83807152af07a17, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 3869512858568928446, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -491,10 +489,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 313251112b2126e4e91bbe13fa3cd2ab, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 3686278761571917055, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -524,10 +522,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: a1894358d5755974098534749e9f3545, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 6591807014612439933, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -546,10 +544,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: d9376415d892d9b4babfc261de889369, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -3269653878167379662, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -579,10 +577,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: f5ccb15010d7dcb49bb20e6a8a98a00b, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -1944735278484464605, guid: f1567911f56d6584580ababe9cf3c619, type: 3}
     Materials: []
     AttachToBone: 
@@ -645,10 +643,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 14f05374a5ad4874fa634c5c2022421a, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -6437923277489693469, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -700,10 +698,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: cf9646c6ffba9bd4f97ac419e6f9a5cd, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 1132411524104341480, guid: 02a2d2a2b6a34b542bdda89f24998468, type: 3}
     Materials: []
     AttachToBone: 
@@ -799,10 +797,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 95d61858a5a7b314e8dedd0b5af1bc72, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 7059892007314774702, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -821,10 +819,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 4075909290cb8d046893cacb9a5ee048, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 7197049726999223180, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -843,10 +841,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 6d21ed38dca7b414e9dd3995335945de, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -9052964302371576575, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -865,10 +863,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 729ff3bae29c40c419d230c3c2456571, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -4161523710038097773, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -887,10 +885,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: d98d5875fa6db06469233b329d89e417, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 1913568145018812361, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -909,10 +907,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: ad550650b634218449403f170422125e, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -6794370595350680882, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -931,10 +929,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 16292c3ebd8efd94ead8dbeb9a95cdf6, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 3228140249335844971, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -953,10 +951,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 53150a739dc9f364aac8da9d3f682e95, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 4807766189299339081, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -975,10 +973,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 42e4f6ffc2b50c9418645327247f901d, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -7418194231302140362, guid: 6fd12daa1ce7f4d4ca98487bad74ff3c, type: 3}
     Materials: []
     AttachToBone: 
@@ -1008,10 +1006,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 5c1f04c5cc3d29f48b3a45d563f18861, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -986309624305122424, guid: a192db0c8d3f4824b8f283318c50e0c4, type: 3}
     Materials:
     - {fileID: 2100000, guid: 208431d4148f98042bdeaa4d0263c721, type: 2}
@@ -1095,10 +1093,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: de844ae83a155b34887a915106afdf56, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -1807140829557154294, guid: a192db0c8d3f4824b8f283318c50e0c4, type: 3}
     Materials:
     - {fileID: 2100000, guid: f775285aa3c6df54c9e4036457cb5cdd, type: 2}
@@ -1181,10 +1179,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: 27cf839c7e8bbcc4ab3ae2da9bac9a97, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -4276338287470950492, guid: 5486163b630c75343a35a54db23ba9a0, type: 3}
     Materials:
     - {fileID: 2100000, guid: 8cb21f6c733425245904c2134551dda3, type: 2}
@@ -1204,10 +1202,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: d60ef8070af812e41aa953293893351e, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: -2348981692629086705, guid: dd8724f236e0c2d4d8ef3a400e53a620, type: 3}
     Materials:
     - {fileID: 2100000, guid: 41e097e12944c3d45add88d2cc6087e9, type: 2}
@@ -1315,10 +1313,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: c18f529e1c6e8bc41862f5083f5f01df, type: 3}
     RequiresVrcSdk: 0
     IsKit: 0
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 0}
     MenuPath: 
-    Menu: {fileID: 0}
-    TargetPrefab: {fileID: 0}
     Mesh: {fileID: 8663360108191660092, guid: dd8724f236e0c2d4d8ef3a400e53a620, type: 3}
     Materials:
     - {fileID: 2100000, guid: 41e097e12944c3d45add88d2cc6087e9, type: 2}
@@ -1360,11 +1358,10 @@ MonoBehaviour:
     Icon: {fileID: 2800000, guid: c18f529e1c6e8bc41862f5083f5f01df, type: 3}
     RequiresVrcSdk: 1
     IsKit: 1
+    KitPrefab: {fileID: 0}
+    WhitelistedObjects: []
     Animator: {fileID: 9100000, guid: bb281b8f59d5d6a4daacc184df673216, type: 2}
     MenuPath: DLCS/Protozear
-    Menu: {fileID: 11400000, guid: 47f78466d90d2564c833ceeac3fe4b30, type: 2}
-    TargetPrefab: {fileID: 7410393814403951781, guid: 41496c3ba34cede4c9a7fa9ddfa6f6bc,
-      type: 3}
     Mesh: {fileID: -7066327987229678630, guid: dd8724f236e0c2d4d8ef3a400e53a620, type: 3}
     Materials:
     - {fileID: 2100000, guid: 41e097e12944c3d45add88d2cc6087e9, type: 2}

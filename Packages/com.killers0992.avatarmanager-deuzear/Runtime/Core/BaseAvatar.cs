@@ -37,14 +37,17 @@ namespace AvatarManager.Core
 
         private SkinnedMeshRenderer _bodyRenderer;
 
+#if VRC_SDK_VRCSDK3
         private VRCAvatarDescriptor _descriptor;
+#endif
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && VRC_SDK_VRCSDK3
         private VRChatAvatar _avatar;
 #endif
 
         public List<BaseAccessory> Accesories = new List<BaseAccessory>();
 
+#if VRC_SDK_VRCSDK3
         public VRCAvatarDescriptor Descriptor
         {
             get
@@ -56,8 +59,9 @@ namespace AvatarManager.Core
                 return _descriptor;
             }
         }
+#endif
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && VRC_SDK_VRCSDK3
         public VRChatAvatar Avatar
         {
             get
