@@ -145,7 +145,7 @@ namespace AvatarManager.Core
                                     List<string> categories = new List<string>();
 
                                     // Setup categories
-                                    foreach (var accessory in Page.Menu.Accessories)
+                                    foreach (var accessory in Page.Menu.Storage.Accessories)
                                     {
                                         if (accessory.Type == item.Type)
                                         {
@@ -153,7 +153,7 @@ namespace AvatarManager.Core
 
                                             categories.Add(accessory.Category);
 
-                                            int num = Page.Menu.Accessories.Where(acc => acc.Type == item.Type && acc.Category == accessory.Category).Count();
+                                            int num = Page.Menu.Storage.Accessories.Where(acc => acc.Type == item.Type && acc.Category == accessory.Category).Count();
 
                                             Page.Items.Insert(index + 1, new AccessoryItem()
                                             {
@@ -174,7 +174,7 @@ namespace AvatarManager.Core
                             };
 
                             Label name = avaAsset.Q<Label>("Name");
-                            name.text = $"{item.Name} ( {Page.Menu.Accessories.Where(x => x.Type == item.Type).Count()} )";
+                            name.text = $"{item.Name} ( {Page.Menu.Storage.Accessories.Where(x => x.Type == item.Type).Count()} )";
 
                             name.style.color = new StyleColor()
                             {
@@ -198,7 +198,7 @@ namespace AvatarManager.Core
                                 if (item.IsShown)
                                 {
                                     // Setup items
-                                    foreach (var accessory in Page.Menu.Accessories)
+                                    foreach (var accessory in Page.Menu.Storage.Accessories)
                                     {
                                         if (accessory.Type == item.RootType && accessory.Category == item.Category)
                                         {
@@ -289,7 +289,7 @@ namespace AvatarManager.Core
                             {
                                 install.clicked += () =>
                                 {
-                                    BaseAvatar.Current.TryAddOrRemoveAccessory(item.Base, out BaseAccessory _);
+                                    BaseAvatar.Current.TryAddOrRemoveAccessory(item.Base);
                                     UpdateInstallButton();
                                 };
                             }
@@ -319,7 +319,7 @@ namespace AvatarManager.Core
 
             public string Category;
 
-            public BaseAccessory Base;
+            public AccessoryData Base;
         }
 
         public List<AccessoryItem> Items = new List<AccessoryItem>()

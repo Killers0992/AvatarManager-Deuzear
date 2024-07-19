@@ -6,7 +6,7 @@ namespace AvatarManager.Core
     {
         private BaseMenu _menuInstance;
 
-        public BaseMenu MenuInstance
+        public  BaseMenu MenuInstance
         {
             get
             {
@@ -24,7 +24,10 @@ namespace AvatarManager.Core
         }
 
         [MenuItem("AvatarManager/Open Deuzear Menu")]
-        public static void OpenWindow() => GetWindow<DeuzearMenu>();
+        public static void OpenWindow()
+        {
+            GetWindow<DeuzearMenu>();
+        }
 
         public void OnGUI()
         {

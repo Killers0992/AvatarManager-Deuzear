@@ -36,7 +36,7 @@ namespace AvatarManager.Core
                 (element.userData as CategoryInfo).Unbind();
             };
 
-            CategoriesList = Menu.Customizations.Select(x => x.Category).Distinct().ToList();
+            CategoriesList = Menu.Storage.Customizations.Select(x => x.Category).Distinct().ToList();
 
             Categories.itemsSource = CategoriesList;
 
@@ -60,6 +60,9 @@ namespace AvatarManager.Core
             };
 
             ChangedCategory += OnCategoryChanged;
+
+            if (CategoriesList.Count == 0)
+                return;
 
             ChangedCategory?.Invoke(CategoriesList[0]);
         }
@@ -231,7 +234,7 @@ namespace AvatarManager.Core
 
         void OnCategoryChanged(string category)
         {
-            ViewingCustoms = Menu.Customizations.Where(x => x.Category == category).ToArray();
+            ViewingCustoms = Menu.Storage.Customizations.Where(x => x.Category == category && BaseAvatar.Current?.GetBlendshapeValue(x.BlendshapeName) != null).ToArray();
             List.itemsSource = ViewingCustoms;
 
             List.Rebuild();

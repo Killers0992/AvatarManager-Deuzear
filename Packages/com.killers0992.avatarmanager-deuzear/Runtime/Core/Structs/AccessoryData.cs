@@ -21,7 +21,7 @@ using VRC.SDK3.Dynamics.PhysBone.Components;
 namespace AvatarManager.Core
 {
     [Serializable]
-    public struct BaseAccessory
+    public struct AccessoryData
     {
         public int Identifier
         {
@@ -99,58 +99,6 @@ namespace AvatarManager.Core
             }
 
             return null;
-        }
-
-        public void Delete(BaseAvatar avatar)
-        {
-            List<string> blendsToRevert = DefaultBlendshapes != null ? DefaultBlendshapes.Select(x => x.BlendshapeName).ToList() : new List<string>();
-
-            foreach(var accessory in avatar.Accesories)
-            {
-                if (accessory.Identifier == Identifier) continue;
-
-                if (accessory.DefaultBlendshapes == null) continue;
-
-                foreach(var blend in accessory.DefaultBlendshapes)
-                {
-                    bool skipRemove = false;
-                    if (blendsToRevert.Contains(blend.BlendshapeName))
-                    {
-                        foreach(var setting in accessory.Blendshapes)
-                        {
-                            if (blend.TargetLocation == LocationOnBody.Unknown) continue;
-
-                            var val = avatar.GetBlendshapeValue(setting.BlendShapeName);
-
-                            if (setting.ZeroMeansActivation ? val == 0 : val != 0)
-                            {
-                                skipRemove = true;
-                            }
-                        }
-                    }
-
-                    foreach(var blendShape in Blendshapes)
-                    {
-                        if (blendShape.BlendShapeName == blend.TargetBlendShape)
-                            skipRemove = true;
-                    }
-
-                    if (skipRemove) continue;
-
-                    blendsToRevert.Remove(blend.BlendshapeName);
-                }
-            }
-
-            if (blendsToRevert.Count != 0)
-            {
-                foreach (var blend in DefaultBlendshapes.Where(x => blendsToRevert.Contains(x.BlendshapeName)))
-                {
-                    avatar.SetBlendshapeValue(blend.BlendshapeName, blend.UsePrevValueThanDefault ? blend.PrevBlendshapeValue : blend.DefaultValue);
-                }
-            }
-
-            avatar.Accesories.Remove(this);
-            GameObject.DestroyImmediate(Object);
         }
 
         public GameObject Instantiate(BaseAvatar avatar, bool focus = false)
@@ -356,16 +304,16 @@ namespace AvatarManager.Core
 
                     foreach (var accessory in avatar.Accesories.ToArray())
                     {
-                        if (accessory.Location.HasAny(tempLocation))
+                        if (accessory.Data.Location.HasAny(tempLocation))
                         {
-                            if (accessory.Blendshapes.Any(x => x.Location.HasAny(tempLocation)))
+                            if (accessory.Data.Blendshapes.Any(x => x.Location.HasAny(tempLocation)))
                             {
-                                foreach (var blendShape in accessory.Blendshapes)
+                                foreach (var blendShape in accessory.Data.Blendshapes)
                                 {
                                     if (!blendShape.Location.HasAny(tempLocation)) continue;
 
                                     avatar.SetBlendshapeValue(blendShape.BlendShapeName, blendShape.ZeroMeansActivation ? 100f : 0f);
-                                    Logger.Info($"Set blendshape <color=green>{blendShape.Name}</color> to <color=green>{(blendShape.ZeroMeansActivation ? 100 : 0)}</color> for <color=green>{accessory.Name}</color> because is coldiing with <color=green>{Name}</color>!");
+                                    Logger.Info($"Set blendshape <color=green>{blendShape.Name}</color> to <color=green>{(blendShape.ZeroMeansActivation ? 100 : 0)}</color> for <color=green>{accessory.Data.Name}</color> because is coldiing with <color=green>{Name}</color>!");
                                 }
                             }
                             else
@@ -374,7 +322,7 @@ namespace AvatarManager.Core
                                 for(int x = 0; x < Blendshapes.Length; x++)
                                 {
                                     // If current accessory dont have any location from x then contnue.
-                                    if (!accessory.Location.HasAny(Blendshapes[x].Location)) continue;
+                                    if (!accessory.Data.Location.HasAny(Blendshapes[x].Location)) continue;
 
                                     avatar.SetBlendshapeValue(Blendshapes[x].BlendShapeName, Blendshapes[x].ZeroMeansActivation ? 100f : 0f);
                                     fixedProblem = true;
@@ -383,7 +331,7 @@ namespace AvatarManager.Core
                                 if (fixedProblem) continue;
 
                                 avatar.RemoveAccessory(accessory);
-                                Logger.Info($"Removed accessory <color=green>{accessory.Name}</color> because is colliding with <color=green>{Name}</color>!");
+                                Logger.Info($"Removed accessory <color=green>{accessory.Data.Name}</color> because is colliding with <color=green>{Name}</color>!");
                             }
                         }
                     }
@@ -598,7 +546,7 @@ namespace AvatarManager.Core
 
                     foreach (var accessory in avatar.Accesories)
                     {
-                        if (accessory.Location.HasAny(blendshape.TargetLocation))
+                        if (accessory.Data.Location.HasAny(blendshape.TargetLocation))
                             foundAny = true;
                     }
 

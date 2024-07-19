@@ -26,12 +26,13 @@ namespace AvatarManager.Core
 
         public BasePage[] Pages;
 
-        public BaseAccessory[] Accessories;
-
-        public BaseCustomization[] Customizations;
+        public AssetsStorage Storage;
 
         public virtual void OnInitialize(EditorWindow window)
         {
+            Instance = this;
+            AssetsStorage.Instance = Storage;
+
             InitializePages();
             InitializeFooter();
             InitializeDropdowns();
@@ -186,12 +187,12 @@ namespace AvatarManager.Core
                 {
                     avatar = root.gameObject.AddComponent<BaseAvatar>();
 
-                    foreach(var accessory in Accessories)
+                    foreach(var accessory in Storage.Accessories)
                     {
-                        if (avatar.TryGetAccessory(accessory, out var acc))
+                        if (avatar.TryGetAccessory(accessory, out AccessoryInfo acc))
                         {
                             if (acc.Object == null)
-                                avatar.RemoveAccessory(acc);
+                                avatar.Accesories.Remove(acc);
                         }
                     }
 

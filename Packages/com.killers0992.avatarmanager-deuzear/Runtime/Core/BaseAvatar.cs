@@ -45,7 +45,7 @@ namespace AvatarManager.Core
         private VRChatAvatar _avatar;
 #endif
 
-        public List<BaseAccessory> Accesories = new List<BaseAccessory>();
+        public List<AccessoryInfo> Accesories = new List<AccessoryInfo>();
 
 #if VRC_SDK_VRCSDK3
         public VRCAvatarDescriptor Descriptor
@@ -158,72 +158,86 @@ namespace AvatarManager.Core
             }
         }
 
-        public void RemoveAccessory(BaseAccessory acc)
+        public void RemoveAccessory(AccessoryInfo acc)
         {
-            if (TryGetAccessory(acc, out BaseAccessory found))
-            {
-                OnAccessoryRemove?.Invoke(acc.Identifier);
-
-                found.Delete(this);
-            }
+            OnAccessoryRemove?.Invoke(acc.Identifier);
+            acc.Delete(this);
         }
 
-        public bool TryAddOrRemoveAccessory(BaseAccessory acc, out BaseAccessory accessory)
+        public bool TryAddOrRemoveAccessory(AccessoryData acc)
         {
-            if (TryGetAccessory(acc, out BaseAccessory found))
+            if (TryGetAccessory(acc, out AccessoryInfo found))
             {
                 found.Delete(this);
-                accessory = default(BaseAccessory);
                 return true;
             }
             else
             {
                 GameObject go = acc.Instantiate(this);
 
-                acc.Object = go;
+                AccessoryInfo acInfo = new AccessoryInfo()
+                {
+                    Identifier = acc.Identifier,
+                    Object = go,
+                };
 
-                Accesories.Add(acc);
-                accessory = acc;
+                Accesories.Add(acInfo);
                 return false;
             }
         }
 
         public bool IsAccessoryInstalled(int identifier) => TryGetAccessoryByIdentifier(identifier, out var _);
 
-        public bool IsAccessoryInstalled(BaseAccessory acc) => TryGetAccessory(acc, out BaseAccessory _);
+        public bool IsAccessoryInstalled(AccessoryData acc) => TryGetAccessory(acc, out AccessoryInfo _);
 
-        public bool TryGetAccessory(BaseAccessory acc, out BaseAccessory accessory)
+        public bool TryGetAccessory(AccessoryData acc, out AccessoryInfo accessory)
         {
-            accessory = default;
+            SkinnedMeshRenderer renderer;
 
-            if (acc.Mesh == null)
-                return false;
-
-
-            var renderer = acc.GetRenderer(this);
-
-            if (renderer == null)
-                return false;
-
-
-            if (renderer.gameObject.tag == "EditorOnly")
+            if (TryGetAccessoryByIdentifier(acc.Identifier, out accessory))
             {
-                DestroyImmediate(renderer.gameObject);
+                if (accessory.Object == null)
+                {
+                    renderer = acc.GetRenderer(this);
 
-                return false;
+                    if (renderer != null)
+                    {
+                        accessory.Object = renderer.gameObject;
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                return true;
             }
-
-            if (!TryGetAccessoryByIdentifier(acc.Identifier, out accessory))
+            else
             {
-                accessory = acc;
-                acc.Object = renderer.gameObject;
-                Accesories.Add(acc);
+                renderer = acc.GetRenderer(this);
+
+                if (renderer == null)
+                    return false;
+
+                if (renderer.gameObject.tag == "EditorOnly")
+                {
+                    DestroyImmediate(renderer.gameObject);
+
+                    return false;
+                }
+
+                accessory = new AccessoryInfo()
+                {
+                    Identifier = acc.Identifier,
+                    Object = renderer.gameObject,
+                };
+
+                Accesories.Add(accessory);
             }
 
             return true;
         }
 
-        public bool TryGetAccessoryByIdentifier(int identifier, out BaseAccessory acc)
+        public bool TryGetAccessoryByIdentifier(int identifier, out AccessoryInfo acc)
         {
             acc = default;
 
