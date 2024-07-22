@@ -1,8 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
-    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Available" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; max-height: 32px; min-height: 32px; background-color: rgba(88, 88, 88, 0.41); flex-direction: row; align-items: stretch; justify-content: space-between;">
-        <ui:Label tabindex="-1" text="Available 0" parse-escape-sequences="true" display-tooltip-when-elided="true" focusable="true" name="Name" style="-unity-text-align: middle-left; font-size: 21px; margin-left: 9px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; text-shadow: 2.1px 2px 0 rgb(0, 0, 0);" />
-        <ui:VisualElement style="flex-grow: 1; height: 32px; max-height: 32px; min-height: 32px; max-width: 32px; min-width: 32px; width: 32px; background-image: none;">
-            <ui:Label tabindex="-1" text="↓" parse-escape-sequences="true" display-tooltip-when-elided="true" style="font-size: 22px;" />
-        </ui:VisualElement>
-    </ui:Button>
-</ui:UXML>

@@ -1,7 +1,7 @@
 {
   "name": "com.killers0992.avatarmanager-deuzear",
   "displayName": "Avatar Manager - Deuzear",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Tool made for managing avatars.",
   "unity": "2022.3",
   "vrchatVersion": "2022.1.1",
@@ -9,6 +9,9 @@
     "name": "Killers0992",
     "email": "killers0992@gmail.com",
     "url": "https://killers.dev"
+  },
+  "vpmDependencies": {
+    "com.killers0992.avatarmanager": "1.0.0"
   },
   "dependencies": {
     "com.unity.editorcoroutines": "1.0.0"

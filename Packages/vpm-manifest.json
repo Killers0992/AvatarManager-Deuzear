@@ -5,6 +5,9 @@
     },
     "com.vrchat.avatars": {
       "version": "3.6.1"
+    },
+    "com.killers0992.avatarmanager": {
+      "version": "1.0.0"
     }
   },
   "locked": {
@@ -17,6 +20,10 @@
       "dependencies": {
         "com.vrchat.base": "3.6.1"
       }
+    },
+    "com.killers0992.avatarmanager": {
+      "version": "1.0.0",
+      "dependencies": {}
     }
   }
 }

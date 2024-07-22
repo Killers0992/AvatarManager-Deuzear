@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DeuzearMenu
   m_EditorClassIdentifier: 
   Title: Deuzear
+  TitleColor: {r: 1, g: 0.5974767, b: 0, a: 1}
   MinSize: {x: 1400, y: 600}
   MaxSize: {x: 1400, y: 600}
   FilterScenePrefix: Deuzear
