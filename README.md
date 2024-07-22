@@ -4,7 +4,7 @@
 # Avatar Manager - Deuzear
 
 <p align="center">
-<b><a href="avatarmanager.killers.dev/install">Add to VCC</a></b>
+<b><a href="https://avatarmanager.killers.dev/install">Add to VCC</a></b>
 </p>
 
 
