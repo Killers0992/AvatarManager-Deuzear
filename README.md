@@ -15,4 +15,4 @@ Features
  - Synchronzized blendshapes on entire avatar means changing for example hips size of avatar will change Hips size on clothing Mesh Renderer.
  - Installing accessories like clothing/fluff via one click.
 
-Hosted under [Avatar Manager](https://github.com/Killers0992/AvatarManager)
+Hosted under [Avatar Manager](https://github.com/Killers0992/AvatarManager-Listing)
