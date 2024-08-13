@@ -4,7 +4,7 @@
 # Avatar Manager - Deuzear
 
 <p align="center">
-<b><a href="https://killers0992.github.io/avatarmanager-listing">Add to VCC</a></b>
+<b><a href="https://killers0992.github.io/AvatarManager-Listing">Add to VCC</a></b>
 </p>
 
 
